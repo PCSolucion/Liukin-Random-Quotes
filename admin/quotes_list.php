@@ -4,24 +4,41 @@
         echo "<h1 class='wp-heading-inline'>Liukin Random Quotes  </h1>";
     ?>
 
+<br/>
+<br/>
+<br/>
+<form method="post" action=""> 
+Quote: <input type="text" name="name" size="80" id="name" /> 
+<input type="submit" name="submit"/> 
+</form>
+
+<?php
+
+if ( isset( $_POST['submit'] ) ){
+
+    global $wpdb;
 
 
-<table class="form-table" role="presentation">
-		<tr class="form-field form-required term-name-wrap">
-			<th scope="row"><label for="name"><?php _ex( 'Quote', 'term name' ); ?></label></th>
-			<td><input name="name" id="name" type="text" value="<?php echo $tag_name_value; ?>" size="40" aria-required="true" />
-			<p class="description"><?php _e( 'Add here the quote.' ); ?></p></td>
+    $tablename=$wpdb->prefix.'liukin_quotes';
 
-		</tr>
+    $data=array( 
+        'Quote' => $_POST['name'],
+        );
 
 
-	</table>
-    <?php submit_button( __( 'Add Quote' ), 'primary', null, false ); ?>
+     $wpdb->insert( $tablename, $data);
+     echo "<meta http-equiv='refresh' content='0'>";
+}
 
-
+?>
 
 <br/>
 <br/>
+<hr/>
+
+
+
+
 <br/>
 <?php
 global $wpdb;
