@@ -3,8 +3,24 @@
     <?php
         echo "<h1 class='wp-heading-inline'>Liukin Random Quotes  </h1>";
     ?>
-<a href="../wp-content/plugins/liukin-random-quotes/admin/add_quotes.php" class="page-title-action">Añadir nueva</a>
 
+
+
+<table class="form-table" role="presentation">
+		<tr class="form-field form-required term-name-wrap">
+			<th scope="row"><label for="name"><?php _ex( 'Quote', 'term name' ); ?></label></th>
+			<td><input name="name" id="name" type="text" value="<?php echo $tag_name_value; ?>" size="40" aria-required="true" />
+			<p class="description"><?php _e( 'Add here the quote.' ); ?></p></td>
+
+		</tr>
+
+
+	</table>
+    <?php submit_button( __( 'Add Quote' ), 'primary', null, false ); ?>
+
+
+
+<br/>
 <br/>
 <br/>
 <?php
