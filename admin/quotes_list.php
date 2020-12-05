@@ -1,9 +1,7 @@
-
 <div class="wrap">
     <?php
-        echo "<h1 class='wp-heading-inline'>Liukin Random Quotes  </h1>";
+        echo "<h1 class='wp-heading-inline'>Liukin Random Quotes</h1>";
     ?>
-
 <br/>
 <br/>
 <br/>
@@ -11,34 +9,20 @@
 Quote: <input type="text" name="name" size="80" id="name" /> 
 <input type="submit" name="submit"/> 
 </form>
-
 <?php
-
 if ( isset( $_POST['submit'] ) ){
-
     global $wpdb;
-
-
     $tablename=$wpdb->prefix.'liukin_quotes';
-
     $data=array( 
         'Quote' => $_POST['name'],
         );
-
-
      $wpdb->insert( $tablename, $data);
      echo "<meta http-equiv='refresh' content='0'>";
 }
-
 ?>
-
 <br/>
 <br/>
 <hr/>
-
-
-
-
 <br/>
 <?php
 global $wpdb;
@@ -47,8 +31,6 @@ $table_name = $wpdb->prefix . "liukin_quotes";
 // this will get the data from your table
 $retrieve_data = $wpdb->get_results( "SELECT * FROM $table_name" );
 ?>
-
-
 <table class="wp-list-table widefat fixed striped pages">
     <thead>
      <th class="quotehead">Quote</th>
@@ -62,7 +44,5 @@ $retrieve_data = $wpdb->get_results( "SELECT * FROM $table_name" );
           </tr>
             <?php }
       ?>
-
-</table>
-   
+</table> 
 </div>

@@ -7,7 +7,7 @@ Author: José Manuel Moreno
 Version: 0.9
 Author URI: https://github.com/PCSolucion
 */
-
+//Activate plugin creata table in DB if no exists
 function Activar(){
     global $wpdb;
 
