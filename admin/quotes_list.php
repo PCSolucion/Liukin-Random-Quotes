@@ -6,8 +6,8 @@
 <br/>
 <br/>
 <form method="post" action=""> 
-Quote: <input type="text" name="name" size="80" id="name" /> 
-<input type="submit" name="submit"/> 
+    <label>Quote: </label><input type="text" name="name" size="80" id="name" /> 
+    <input type="submit" name="submit"/> 
 </form>
 <?php
 if ( isset( $_POST['submit'] ) ){
@@ -31,18 +31,17 @@ $table_name = $wpdb->prefix . "liukin_quotes";
 // this will get the data from your table
 $retrieve_data = $wpdb->get_results( "SELECT * FROM $table_name" );
 ?>
-<table class="wp-list-table widefat fixed striped pages">
-    <thead>
-     <th class="quotehead">Quote</th>
-    </thead>
-
-      <?php
-        global $wpdb;
-        foreach ($retrieve_data as $retrieved_data){ ?>
+    <table class="wp-list-table widefat fixed striped pages">
+        <thead>
+        <th class="quotehead">Quotes</th>
+        </thead>
+        <?php
+            global $wpdb;
+            foreach ($retrieve_data as $retrieved_data){ ?>
             <tr>
-                  <td> <?php echo $retrieved_data->Quote;?> </td>
-          </tr>
+                <td> <?php echo $retrieved_data->Quote;?> </td>
+            </tr>
             <?php }
-      ?>
-</table> 
+            ?>
+    </table> 
 </div>
